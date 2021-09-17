@@ -1,0 +1,27 @@
+App\Entity\PermissionRule:
+    api_users_get_collection_ceo:
+        permission: '@api_users_get_collection'
+        position: '@ceo'
+        filters: []
+        groups: [ user:admin ]
+
+    api_users_get_collection_directeur:
+        permission: '@api_users_get_collection'
+        position: '@directeur'
+        filters: [ organization ]
+        groups: [ user:admin ]
+
+    api_users_get_collection_formateur:
+        permission: '@api_users_get_collection'
+        position: '@formateur'
+        filters: [ organization, service ]
+        
+    api_users_get_collection_cto:
+        permission: '@api_users_get_collection'
+        position: '@cto'
+        filters: [ manager ]
+
+    api_users_get_collection_dev:
+        permission: '@api_users_get_collection'
+        position: '@developpeur'
+        filters: [ id ]

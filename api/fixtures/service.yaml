@@ -1,0 +1,12 @@
+App\Entity\Service:
+    direction:
+        name: 'Direction'
+        
+    formation:
+        name: 'Formation'
+    
+    dev:
+        name: 'Développement'
+
+    commerce:
+        name: 'Commerce'

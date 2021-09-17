@@ -1,0 +1,76 @@
+App\Entity\User:
+    base_user (template):
+        email: '<email()>'
+        password: '\$argon2id\$v=19\$m=65536,t=4,p=1\$cpLEa4pWGdk4lLkPy8gI9w\$2NtwO33/msn3UPCXEM7s5vd7eXNYHpS4J9Wqgjs4pjY' # azerty
+        firstname: '<firstName()>'
+        lastname: '<lastName()>'
+        manager: null
+        roles: [ROLE_USER]
+        organization: '@lille'
+    
+    president (extends base_user):
+        email: 'president\@foo.com'
+        service: '@direction'
+        position: '@ceo'
+        address: '@address_president'
+        roles: [ROLE_USER, ROLE_ADMIN]
+        
+    directeur_lille (extends base_user):
+        email: 'directeur_lille\@foo.com'
+        service: '@direction'
+        position: '@directeur'
+        manager: '@president'
+        address: '@address_directeur_lille'
+        
+    directeur_paris (extends base_user):
+        email: 'directeur_paris\@foo.com'
+        organization: '@paris'
+        service: '@direction'
+        position: '@directeur'
+        manager: '@president'
+        address: '@address_directeur_paris'
+        
+    formateur_lille (extends base_user):
+        email: 'formateur\@foo.com'
+        service: '@formation'
+        position: '@formateur'
+        manager: '@directeur_lille'
+        address: '@address_formateur'
+        
+    cto_lille (extends base_user):
+        email: 'cto_lille\@foo.com'
+        service: '@dev'
+        position: '@cto'
+        manager: '@directeur_lille'
+        address: '@address_cto_lille'
+        
+    cto_paris (extends base_user):
+        email: 'cto_paris\@foo.com'
+        organization: '@paris'
+        service: '@dev'
+        position: '@cto'
+        manager: '@directeur_paris'
+        address: '@address_cto_paris'
+    
+    dev_lille_{1..3} (extends base_user):
+        email: 'dev_lille_<current()>\@foo.com'
+        service: '@dev'
+        position: '@developpeur'
+        manager: '@cto_lille'
+        address: '@address_dev_lille_<current()>'
+
+    dev_paris_{1..3} (extends base_user):
+        email: 'dev_paris_<current()>\@foo.com'
+        organization: '@paris'
+        service: '@dev'
+        position: '@developpeur'
+        manager: '@cto_paris'
+        address: '@address_dev_paris_<current()>'
+
+    commercial_paris (extends base_user):
+        email: 'commercial\@foo.com'
+        organization: '@paris'
+        service: '@commerce'
+        position: '@commercial'
+        manager: '@directeur_lille'
+        address: '@address_commercial'

@@ -1,0 +1,3 @@
+gesdinet_jwt_refresh_token:
+  ttl: 43200 # 12 hours
+  single_use: true

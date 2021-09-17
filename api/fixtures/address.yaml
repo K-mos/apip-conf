@@ -1,0 +1,13 @@
+App\Entity\Address:
+    address_base (template):
+        city: '<city()>'
+    
+    address_president (extends address_base): ~
+    address_directeur_lille (extends address_base): ~
+    address_directeur_paris (extends address_base): ~
+    address_formateur (extends address_base): ~
+    address_cto_lille (extends address_base): ~
+    address_cto_paris (extends address_base): ~
+    address_dev_lille_{1..3} (extends address_base): ~
+    address_dev_paris_{1..3} (extends address_base): ~
+    address_commercial (extends address_base): ~

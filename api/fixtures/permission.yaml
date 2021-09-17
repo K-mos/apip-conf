@@ -1,0 +1,9 @@
+App\Entity\Permission:
+    api_users_get_collection:
+        code: api_users_get_collection
+        
+    api_users_get_item:
+        code: api_users_get_item
+      
+    api_addresses_get_collection:
+        code: api_addresses_get_collection

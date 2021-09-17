@@ -1,0 +1,18 @@
+App\Entity\Position:
+    ceo: # tout le monde
+        name: 'Président'
+        
+    directeur: # toute son orga
+        name: 'Directeur agence'
+        
+    formateur: # son service/orga
+      name: 'Formateur'
+
+    cto: # ses n-1
+        name: 'Directeur technique'
+        
+    developpeur: # juste soi
+        name: 'Développeur'
+        
+    commercial: # juste soi
+        name: 'Commercial'

@@ -1,0 +1,6 @@
+App\Entity\Organization:
+    lille:
+        name: 'Lille'
+        
+    paris:
+        name: 'Paris'
